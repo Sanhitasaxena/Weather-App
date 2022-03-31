@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- container is the wrapper block -->
+    <div id="container">
+        <div id="search">
+            <div id="input-field">
+                <label>Enter your City Name.. </label>
+                <input type="search" placeholder="Type here" id="input">
+            </div>
+            <div>
+                <button id="submit" onclick="getWeather()">
+                    Get Weather
+                </button>
+            </div>
+        </div>
+        <div id="result">
+           <div>
+               <div id="name-of-city">
+                  
+               </div>
+               <div id="result-image">
+                <img src = "#"id="image">
+                 
+             </div>
+           </div>  
+           <div id="result-data">
+            <div id="desc-of-temp">
+            
+            </div>
+            <div id="temp">
+            
+            </div>
+            <div id="temp-min">
+            
+            </div>
+            <div id="temp-max">
+            
+            </div>
+           </div>
+        </div>
+    </div>
+    <!-- here temp is temperature fetched by fetch API -->
+    <!-- desc-of-temp is description of temperature -->
+    <script src="index.js"></script>
+</body>
+</html>

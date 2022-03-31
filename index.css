@@ -1,0 +1,11 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-image:url('./imagesForWeatherApp/bg3.jpg');
+    background-size: contain;
+    /* background-repeat: repeat; */
+}
+
+/* #container{
+
+} */
