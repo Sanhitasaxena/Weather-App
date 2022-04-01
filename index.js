@@ -1,8 +1,10 @@
 // aqcuiring dom elements
 const cityName = document.getElementById('input')
+const container = document.getElementById('result')
 
 // function to be called when "Get Weather" button is clicked
 function getWeather(){
+   
     fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${cityName.value}&appid=98449fd177033a44e594241446ca15bf`)
     .then(response => response.json())
     .then(data => {
@@ -26,6 +28,8 @@ function getWeather(){
 }   
  
 appendFunction = (fetchedData) =>{
+   
+     clearFields()
      const Name = fetchedData[0]
      const cityNameDiv = document.createElement('p')
      cityNameDiv.innerHTML = "Name of the City: "+Name.value
@@ -48,5 +52,14 @@ appendFunction = (fetchedData) =>{
     document.getElementById('temp').appendChild(tempDiv)
     document.getElementById('temp-min').appendChild(minTempDiv)
     document.getElementById('temp-max').appendChild(maxTempDiv)
-   
+  
+}
+
+function clearFields(){
+    document.getElementById('name-of-city').innerHTML = ''
+    document.getElementById('desc-of-temp').innerHTML = ''
+    document.getElementById('temp').innerHTML = ''
+    document.getElementById('temp-min').innerHTML = ''
+    document.getElementById('temp-max').innerHTML = ''
+ 
 }
