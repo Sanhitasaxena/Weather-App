@@ -13,11 +13,11 @@ function getWeather(){
         console.log(image)
         const description = data.list[0].weather[0].description
         console.log(description)
-        const Temp = Number(data.list[0].main.temp - 273.15).toFixed(1) + "°"
+        const Temp = Number(data.list[0].main.temp - 273.15).toFixed(1) + "°C"
         console.log(Temp)
-        const minTemp = Number(data.list[0].main.temp_min - 273.15).toFixed(1) + "°"
+        const minTemp = Number(data.list[0].main.temp_min - 273.15).toFixed(1) + "°C"
         console.log(minTemp)
-        const maxTemp = Number(data.list[0].main.temp_max - 273.15).toFixed(1) + "°"
+        const maxTemp = Number(data.list[0].main.temp_max - 273.15).toFixed(1) + "°C"
         console.log(maxTemp)
         
         // this function appends the data into html fields
@@ -32,19 +32,19 @@ appendFunction = (fetchedData) =>{
      clearFields()
      const Name = fetchedData[0]
      const cityNameDiv = document.createElement('p')
-     cityNameDiv.innerHTML = "Name of the City: "+Name.value
+     cityNameDiv.innerHTML = "Name of the City: "+`<b>${Name.value}</b>`
 
     const descriptionDiv = document.createElement('p')
-    descriptionDiv.innerHTML = "Description of Weather: "+fetchedData[2]
+    descriptionDiv.innerHTML = "Description of Weather: "+`<b>${fetchedData[2]}</b>`
 
     const tempDiv = document.createElement('p')
-    tempDiv.innerHTML = "Current Temperature :"+fetchedData[3]
+    tempDiv.innerHTML = "Current Temperature :"+`<b>${fetchedData[3]}</b>`
     
     const minTempDiv = document.createElement('p')
-    minTempDiv.innerHTML = "Expected minimum temperature: "+fetchedData[4]
+    minTempDiv.innerHTML = "Expected minimum temperature: "+`<b>${fetchedData[4]}</b>`
     
     const maxTempDiv = document.createElement('P')
-    maxTempDiv.innerHTML = "Expected maximum temperature: "+fetchedData[5]
+    maxTempDiv.innerHTML = "Expected maximum temperature: "+`<b>${fetchedData[5]}</b>`
     
     // appending elements
     document.getElementById('name-of-city').appendChild(cityNameDiv)
